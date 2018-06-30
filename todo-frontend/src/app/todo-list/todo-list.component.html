@@ -1,0 +1,19 @@
+<div id="list-container">
+  <app-todo-list-item *ngFor="let item of todoItems$ | async" [todoItem]="item" (delete)="onDelete(item)" (edit)="onEdit(item)"></app-todo-list-item>
+  <div class="card">
+    <form [formGroup]="todoItemForm">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" placeholder="Enter a title" formControlName="title">
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" placeholder="Enter a description" formControlName="description">
+      </div>
+    </form>
+    <div class="buttons">
+      <button class="btn btn-primary" *ngIf="editedItem" [disabled]="todoItemForm.invalid" (click)="onSave()">Save</button>
+      <button class="btn btn-primary" *ngIf="!editedItem" [disabled]="todoItemForm.invalid" (click)="onSave()">Create</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="card">
+  <h2 class="title">{{todoItem.title}}</h2>
+  <p class="desc">{{todoItem.description}} </p>
+  <div class="buttons">
+    <button class="btn btn-primary" (click)="edit.emit(todoItem)">Edit</button>
+    <button class="btn btn-danger float-right" (click)="delete.emit(todoItem)">Delete</button>
+  </div>
+</div>
