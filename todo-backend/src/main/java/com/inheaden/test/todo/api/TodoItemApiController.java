@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/v1/todo")
 @Api(description = "Api Controller for handling TodoItems.")
+@CrossOrigin
 public class TodoItemApiController extends CRUDApiController<TodoItem, String, TodoItemRepository> {
 
     @Data
